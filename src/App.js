@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./assets/css/font.css";
+import "./App.css";
+import Testimonio from "./componentes/Testimonio";
 
 function App() {
+  let testimonios = require("./assets/jsons/testimonios.json");
+  console.log(testimonios[1].nombre);
+  console.log(testimonios.length);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="contenedor-principal">
+        <h1>Here is what our alumni say about freeCodeCamp:</h1>
+        <div className="tarjetas">
+          {testimonios.map((data, key) => {
+            return (
+              <Testimonio
+                key={key}
+                nombre={data.nombre}
+                pais={data.pais}
+                imagen={data.nombre}
+                cargo={data.cargo}
+                empresa={data.empresa}
+                testimonio={data.testimonio}
+              />
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }
