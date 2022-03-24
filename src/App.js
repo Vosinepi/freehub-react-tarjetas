@@ -19,7 +19,7 @@ function App() {
                 key={key}
                 nombre={data.nombre}
                 pais={data.pais}
-                imagen={data.nombre}
+                imagen={data.imagenLink}
                 cargo={data.cargo}
                 empresa={data.empresa}
                 testimonio={data.testimonio}

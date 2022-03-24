@@ -2,10 +2,11 @@ import React from "react";
  import "../hojas-de-estilo/Testimonio.css";
 
 const Testimonio = (props) => {
+  console.log(props.imagen)
   return (
     <div className="contenedor-testimonio">
       <img
-        src={require(`../imagenes/ema.png`)}
+        src={require(`../imagenes/${props.imagen}.png`)}
         alt={`foto de ${props.nombre}`}
         className="imagen-testimonio"
       />
